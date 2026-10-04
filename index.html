@@ -1,559 +1,428 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#10112b">
-<meta name="description" content="Yesu Ki Awaaz — Worship, music, Bible, prayer and Christian community. Jiske kaan ho, vo sun le.">
-<title>Yesu Ki Awaaz | Jiske kaan ho, vo sun le</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#11152d">
+
+<title>Yesu Ki Awaaz | Jiske Kaan Ho Vo Sun Le</title>
 
 <style>
 :root{
---navy:#10112b;
---plum:#24183d;
---gold:#e8c879;
---cream:#fff9ec;
---muted:#c9c5d9;
---line:#ffffff24
+  --bg:#0b1024;
+  --card:#171d3b;
+  --card2:#202750;
+  --gold:#e8c879;
+  --white:#fff;
+  --muted:#c9cce0;
+  --danger:#ff8585;
+  --success:#79e0a1;
 }
 
 *{box-sizing:border-box}
+
 html{scroll-behavior:smooth}
 
 body{
-margin:0;
-background:#0c0d21;
-color:var(--cream);
-font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-line-height:1.6
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--white);
+  line-height:1.6;
 }
 
-a{color:inherit}
-.wrap{width:min(1120px,92%);margin:auto}
+a{
+  color:inherit;
+  text-decoration:none;
+}
 
-.topbar{
-padding:17px 0;
-border-bottom:1px solid var(--line);
-background:#10112bf2;
-position:sticky;
-top:0;
-z-index:10;
-backdrop-filter:blur(12px)
+.container{
+  width:92%;
+  max-width:1150px;
+  margin:auto;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(11,16,36,.95);
+  border-bottom:1px solid #ffffff20;
+  backdrop-filter:blur(10px);
 }
 
 .nav{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:18px
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
 }
 
-.brand{
-font-weight:850;
-letter-spacing:.08em;
-text-decoration:none;
-font-size:1.05rem
+.logo{
+  font-size:20px;
+  font-weight:bold;
+  letter-spacing:1px;
 }
 
-.brand span{color:var(--gold)}
-
-.navlinks{
-display:flex;
-gap:17px;
-flex-wrap:wrap
+.logo span{
+  color:var(--gold);
 }
 
-.navlinks a{
-font-size:.88rem;
-text-decoration:none;
-color:var(--muted)
+.menu{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
 }
 
-.navlinks a:hover{color:var(--gold)}
+.menu a{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.menu a:hover{
+  color:var(--gold);
+}
 
 .hero{
-position:relative;
-overflow:hidden;
-padding:86px 0 78px;
-background:
-radial-gradient(ellipse at 80% 20%,#63468c77,transparent 38%),
-linear-gradient(135deg,#15132f,#21183c 55%,#11132a)
+  padding:90px 0;
+  background:
+  radial-gradient(circle at 80% 20%,#5c438255,transparent 35%),
+  linear-gradient(135deg,#101631,#24183d);
 }
 
-.hero:after{
-content:"✝";
-position:absolute;
-right:8%;
-top:4%;
-font-size:clamp(10rem,30vw,24rem);
-line-height:1;
-color:#ffffff08;
-pointer-events:none
-}
-
-.eyebrow{
-color:var(--gold);
-text-transform:uppercase;
-letter-spacing:.18em;
-font-weight:750;
-font-size:.78rem
+.small-title{
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:13px;
+  font-weight:bold;
 }
 
 .hero h1{
-font-size:clamp(2.7rem,7vw,5.8rem);
-line-height:1.02;
-margin:14px 0 18px;
-max-width:850px;
-letter-spacing:-.04em
+  font-size:clamp(42px,8vw,90px);
+  line-height:1;
+  margin:18px 0;
 }
 
-.hero h1 span{color:var(--gold)}
+.hero h1 span{
+  color:var(--gold);
+}
 
 .tagline{
-font-size:clamp(1.2rem,3vw,1.7rem);
-font-weight:650;
-margin:0 0 12px
+  font-size:24px;
+  font-weight:bold;
 }
 
-.lead{
-max-width:650px;
-color:var(--muted);
-font-size:1.05rem
+.hero p{
+  color:var(--muted);
+  max-width:700px;
 }
 
-.actions{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-margin-top:28px
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:25px;
 }
 
 .btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-padding:12px 19px;
-border-radius:999px;
-text-decoration:none;
-font-weight:750;
-border:1px solid var(--gold);
-transition:.2s;
-cursor:pointer
+  border:1px solid var(--gold);
+  padding:11px 18px;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:bold;
+  display:inline-block;
+  background:transparent;
+  color:white;
 }
 
-.btn.primary{
-background:var(--gold);
-color:#1a1730
+.btn.gold{
+  background:var(--gold);
+  color:#15162d;
 }
 
-.btn.secondary{
-color:var(--cream);
-border-color:#ffffff50
+.btn.danger{
+  border-color:var(--danger);
+  color:#ffdada;
 }
 
-.btn:hover{transform:translateY(-2px)}
-
-.scripture{
-margin-top:35px;
-padding:17px 20px;
-border-left:3px solid var(--gold);
-background:#ffffff08;
-max-width:660px;
-color:#eee7fa
+section{
+  padding:70px 0;
 }
 
-.scripture small{
-display:block;
-color:var(--gold);
-margin-top:5px
+.dark{
+  background:#101631;
 }
 
-section{padding:70px 0}
-
-.section-head{
-max-width:700px;
-margin-bottom:28px
+.section-title{
+  margin-bottom:30px;
 }
 
-.section-head h2{
-font-size:clamp(1.8rem,4vw,2.6rem);
-margin:5px 0 8px;
-line-height:1.15
+.section-title h2{
+  font-size:38px;
+  margin:8px 0;
 }
 
-.section-head p{
-color:var(--muted);
-margin:0
+.section-title p{
+  color:var(--muted);
 }
 
 .grid{
-display:grid;
-grid-template-columns:repeat(3,minmax(0,1fr));
-gap:17px
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
 }
 
-.card{
-background:linear-gradient(145deg,#211d3d,#15172f);
-border:1px solid var(--line);
-border-radius:20px;
-padding:23px;
-min-width:0
+.card,
+.panel{
+  background:linear-gradient(145deg,var(--card),#121832);
+  border:1px solid #ffffff18;
+  border-radius:20px;
+  padding:23px;
 }
-
-.card .symbol{font-size:1.65rem}
 
 .card h3{
-margin:9px 0 7px;
-font-size:1.15rem
+  margin-top:10px;
 }
 
-.card p{
-color:var(--muted);
-margin:0 0 15px
+.card p,
+.panel p{
+  color:var(--muted);
 }
 
-.text-link{
-color:var(--gold);
-font-weight:750;
-text-decoration:none
-}
-
-.text-link:hover{text-decoration:underline}
-
-.soft{background:#12132a}
-
-.feature{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:22px;
-align-items:stretch
-}
-
-.feature-panel{
-border:1px solid var(--line);
-border-radius:22px;
-padding:28px;
-background:linear-gradient(145deg,#2b2047,#17172f)
-}
-
-.feature-panel h3{
-font-size:1.45rem;
-margin:0 0 9px
-}
-
-.pill{
-display:inline-block;
-border:1px solid #e8c87955;
-border-radius:999px;
-color:var(--gold);
-font-size:.78rem;
-padding:4px 10px;
-margin:0 5px 8px 0
-}
-
-.artist-placeholder{
-display:flex;
-align-items:center;
-gap:16px;
-border:1px dashed #e8c87977;
-border-radius:16px;
-padding:18px;
-margin-top:18px;
-background:#ffffff05
-}
-
-.cross{
-width:54px;
-height:54px;
-display:grid;
-place-items:center;
-border-radius:15px;
-background:#e8c87918;
-color:var(--gold);
-font-size:1.8rem;
-flex-shrink:0
-}
-
-.artist-placeholder strong{display:block}
-.artist-placeholder small{color:var(--muted)}
-
-.bible-card{
-background:linear-gradient(140deg,#34234b,#17182f);
-border-radius:24px;
-padding:30px;
-border:1px solid #e8c87944
-}
-
-.verse{
-font-size:clamp(1.3rem,3vw,2rem);
-line-height:1.4;
-font-weight:650
+.bible{
+  font-size:25px;
+  font-weight:bold;
 }
 
 .reference{
-color:var(--gold);
-font-weight:750;
-margin-top:12px
+  color:var(--gold);
+  margin-top:10px;
+  font-weight:bold;
 }
 
-.notice{
-font-size:.86rem;
-color:var(--muted);
-margin-top:12px
+.two{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
 }
 
-.cta{
-background:linear-gradient(110deg,#35234c,#17182f);
-border:1px solid #e8c87955;
-border-radius:25px;
-padding:clamp(24px,5vw,42px);
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:25px
+input,
+textarea,
+select{
+  width:100%;
+  padding:13px;
+  margin:6px 0;
+  border-radius:12px;
+  border:1px solid #ffffff22;
+  background:#080d20;
+  color:white;
+  font-size:15px;
 }
 
-.cta h2{
-margin:0 0 8px;
-font-size:clamp(1.7rem,4vw,2.4rem)
+textarea{
+  min-height:130px;
+  resize:vertical;
 }
 
-.cta p{
-color:var(--muted);
-margin:0;
-max-width:650px
+.status{
+  min-height:24px;
+  color:var(--gold);
+}
+
+.admin-record{
+  background:#0b1024;
+  border:1px solid #ffffff18;
+  border-radius:14px;
+  padding:15px;
+  margin:12px 0;
+}
+
+.admin-record h4{
+  margin:0 0 8px;
+  color:var(--gold);
+}
+
+.record-data{
+  white-space:pre-wrap;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.record-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:12px;
 }
 
 footer{
-padding:30px 0;
-border-top:1px solid var(--line);
-color:var(--muted)
+  padding:35px 0;
+  border-top:1px solid #ffffff18;
+  color:var(--muted);
 }
 
-.footer-row{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:20px;
-flex-wrap:wrap
-}
+@media(max-width:750px){
+  .nav{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:14px 0;
+  }
 
-.footer-brand{
-color:var(--cream);
-font-weight:850;
-letter-spacing:.08em
-}
+  .grid,
+  .two{
+    grid-template-columns:1fr;
+  }
 
-.footer-brand span{color:var(--gold)}
-
-.tiny{font-size:.83rem}
-
-/* PRAYER FORM */
-
-.prayer-form{
-margin-top:22px
-}
-
-.prayer-form input,
-.prayer-form textarea{
-width:100%;
-padding:14px 15px;
-margin-bottom:12px;
-border-radius:12px;
-border:1px solid #ffffff25;
-background:#0d0e23;
-color:#fff;
-font-family:inherit;
-font-size:1rem;
-outline:none
-}
-
-.prayer-form input:focus,
-.prayer-form textarea:focus{
-border-color:var(--gold)
-}
-
-.prayer-form textarea{
-resize:vertical;
-min-height:130px
-}
-
-.prayer-form button{
-margin-top:4px
-}
-
-#prayerStatus{
-min-height:24px
-}
-
-@media(max-width:760px){
-
-.nav{
-align-items:flex-start;
-flex-direction:column
-}
-
-.navlinks{gap:12px}
-
-.hero{padding:66px 0 58px}
-
-.grid{grid-template-columns:1fr}
-
-.feature{grid-template-columns:1fr}
-
-.cta{
-align-items:flex-start;
-flex-direction:column
-}
-
-section{padding:54px 0}
+  .hero{
+    padding:65px 0;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header class="topbar">
-<div class="wrap nav">
+<header>
+<div class="container nav">
 
-<a class="brand" href="#home">
+<a href="#home" class="logo">
 ✝ <span>YESU KI AWAAZ</span>
 </a>
 
-<nav class="navlinks" aria-label="Main navigation">
+<nav class="menu">
 <a href="#worship">Worship</a>
 <a href="#bible">Bible</a>
 <a href="#prayer">Prayer</a>
-<a href="#singers">Local Singers</a>
+<a href="#singers">Singers</a>
 <a href="#connect">Connect</a>
+<a href="#admin">Admin</a>
 </nav>
 
 </div>
 </header>
 
-<main>
+
+<!-- HERO -->
 
 <section class="hero" id="home">
-<div class="wrap">
+<div class="container">
 
-<div class="eyebrow">A Jesus-centred worship community</div>
-
-<h1>✝ YESU KI <span>AWAAZ</span></h1>
-
-<p class="tagline">“Jiske kaan ho, vo sun le.”</p>
-
-<p class="lead">
-Worship • Music • Bible • Prayer • Community<br>
-Hindi, Punjabi and English Christian worship — sharing hope and giving glory to Lord Jesus Christ.
-</p>
-
-<div class="actions">
-<a class="btn primary" href="#worship">Explore Worship ↓</a>
-<a class="btn secondary" href="#prayer">Prayer Request</a>
+<div class="small-title">
+A Jesus-centred Christian community
 </div>
 
-<div class="scripture">
-“Let everything that has breath praise the LORD.”
-<small>Psalm 150:6 · Praise belongs to the Lord</small>
+<h1>
+YESU KI <span>AWAAZ</span>
+</h1>
+
+<div class="tagline">
+“Jiske kaan ho, vo sun le.”
+</div>
+
+<p>
+Worship • Bible • Prayer • Christian Music • Testimonies • Community
+</p>
+
+<p>
+Hindi, Punjabi and English Christian worship platform created to glorify
+Lord Jesus Christ and encourage people through God's Word.
+</p>
+
+<div class="buttons">
+<a class="btn gold" href="#worship">Explore Worship</a>
+<a class="btn" href="#prayer">Send Prayer Request</a>
 </div>
 
 </div>
 </section>
 
 
-<section id="worship">
-<div class="wrap">
+<!-- WORSHIP -->
 
-<div class="section-head">
-<div class="eyebrow">Sing unto the Lord</div>
-<h2>Worship that points to Jesus</h2>
-<p>
-Discover worship in the languages we pray, sing and praise in.
-Add your official video links here as they are published.
-</p>
+<section id="worship">
+<div class="container">
+
+<div class="section-title">
+<div class="small-title">Praise the Lord</div>
+<h2>Worship</h2>
+<p>Hindi, Punjabi and English Christian worship.</p>
 </div>
 
 <div class="grid">
 
-<article class="card">
-<div class="symbol">🎶</div>
-<h3>Hindi Worship</h3>
-<p>Hindi praise, prayer songs and Gospel melodies to encourage hearts.</p>
-<a class="text-link" href="#connect">Share a song link →</a>
-</article>
-
-<article class="card">
-<div class="symbol">🎹</div>
-<h3>Punjabi Worship</h3>
-<p>Punjabi Christian worship, harmonium-led praise and songs of testimony.</p>
-<a class="text-link" href="#connect">Share a song link →</a>
-</article>
-
-<article class="card">
-<div class="symbol">🌍</div>
-<h3>English Worship</h3>
-<p>Worship songs and messages of faith for our wider Christian community.</p>
-<a class="text-link" href="#connect">Share a song link →</a>
-</article>
-
+<div class="card">
+<h3>🎶 Hindi Worship</h3>
+<p>
+Hindi Christian worship songs, prayers and Gospel messages.
+</p>
 </div>
 
-<p class="notice">
-Videos will be embedded from the artist’s official/public channel, with permission where needed.
-No copyrighted uploads without authorization.
+<div class="card">
+<h3>🎹 Punjabi Worship</h3>
+<p>
+Punjabi Christian worship and songs of faith and testimony.
 </p>
+</div>
 
+<div class="card">
+<h3>🌍 English Worship</h3>
+<p>
+English worship songs and Christian encouragement.
+</p>
+</div>
+
+</div>
 </div>
 </section>
 
 
-<section class="soft" id="bible">
-<div class="wrap">
+<!-- BIBLE -->
 
-<div class="section-head">
-<div class="eyebrow">Daily encouragement</div>
-<h2>A Word to carry with you</h2>
-<p>A small reminder to keep our hearts focused on the Word of God.</p>
+<section id="bible" class="dark">
+<div class="container">
+
+<div class="section-title">
+<div class="small-title">God's Word</div>
+<h2>Bible Verse</h2>
 </div>
 
-<div class="bible-card">
+<div class="panel">
 
-<div class="verse">
+<div class="bible">
 “The LORD is my shepherd; I shall not want.”
 </div>
 
 <div class="reference">
-Psalm 23:1 (KJV)
+Psalm 23:1
 </div>
 
-<p>
-Take a moment today to pray, trust God, and share His love with someone.
-</p>
-
 </div>
+
 </div>
 </section>
 
 
-<!-- PRAYER SECTION -->
+<!-- PRAYER + TESTIMONY -->
 
 <section id="prayer">
+<div class="container">
 
-<div class="wrap feature">
+<div class="two">
 
-<div class="feature-panel">
+<div class="panel">
 
-<div class="eyebrow">You are not alone</div>
+<div class="small-title">You are not alone</div>
 
-<h3>Prayer Request</h3>
+<h2>🙏 Prayer Request</h2>
 
 <p>
-Would you like prayer? Send a short message.
-Please share only what you feel comfortable sharing.
+Share your prayer request with us.
 </p>
 
-<form id="prayerForm" class="prayer-form">
+<form id="prayerForm">
 
 <input
 id="prayerName"
@@ -570,262 +439,358 @@ placeholder="Email (optional)"
 
 <textarea
 id="prayerMessage"
-rows="6"
 placeholder="Please share your prayer request..."
 required
 ></textarea>
 
-<button
-class="btn primary"
-type="submit"
-id="prayerSubmit"
->
+<button class="btn gold" type="submit">
 Send Prayer Request
 </button>
 
-<p id="prayerStatus" class="notice"></p>
+<p id="prayerStatus" class="status"></p>
 
 </form>
 
-<p class="notice">
-Your prayer request will be securely stored so the Yesu Ki Awaaz team can pray for you.
-</p>
-
 </div>
 
 
-<div class="feature-panel">
+<div class="panel">
 
-<div class="eyebrow">A place for the community</div>
+<div class="small-title">Testimony</div>
 
-<h3>Share a Testimony</h3>
+<h2>📝 Share Your Testimony</h2>
 
 <p>
-If you have a testimony, Bible reflection or original worship song
-that may encourage others, get in touch.
-We’ll review submissions before featuring them.
+Tell us how God has worked in your life.
 </p>
 
-<a
-class="btn secondary"
-href="mailto:ashishbhatti2190@gmail.com?subject=Submission%20-%20Yesu%20Ki%20Awaaz"
+<form id="testimonyForm">
+
+<input
+id="testimonyName"
+type="text"
+placeholder="Your name"
+required
 >
-Send Your Story →
-</a>
 
-</div>
-
-</div>
-</section>
-
-
-<section class="soft" id="singers">
-
-<div class="wrap">
-
-<div class="section-head">
-
-<div class="eyebrow">Local voices, one shared faith</div>
-
-<h2>Jammu Christian Singers</h2>
-
-<p>
-A future spotlight for Christian singers and worship teams from Jammu
-and nearby communities. Artist photos and videos will be added only
-when singers submit them and give permission.
-</p>
-
-</div>
-
-<div class="grid">
-
-<article class="card">
-<div class="symbol">🎤</div>
-<h3>Artist of the Week</h3>
-<p>
-<span class="pill">Coming Soon</span><br>
-Meet a local singer, learn their story and listen to an authorized featured performance.
-</p>
-</article>
-
-<article class="card">
-<div class="symbol">🎵</div>
-<h3>New Singer Corner</h3>
-<p>
-<span class="pill">Coming Soon</span><br>
-A welcoming space for emerging voices to share original or authorized worship music.
-</p>
-</article>
-
-<article class="card">
-<div class="symbol">🤝</div>
-<h3>Submit Your Song / Video</h3>
-
-<p>
-Are you a Christian singer from Jammu?
-Send your name, a short introduction and an official video link.
-</p>
-
-<a
-class="text-link"
-href="mailto:ashishbhatti2190@gmail.com?subject=Jammu%20Christian%20Singer%20Submission"
+<input
+id="testimonyEmail"
+type="email"
+placeholder="Email"
 >
-Submit for Review →
-</a>
 
-</article>
+<input
+id="testimonyTitle"
+type="text"
+placeholder="Testimony title"
+required
+>
+
+<textarea
+id="testimonyMessage"
+placeholder="Your testimony..."
+required
+></textarea>
+
+<button class="btn gold" type="submit">
+Submit Testimony
+</button>
+
+<p id="testimonyStatus" class="status"></p>
+
+</form>
 
 </div>
 
-<p class="notice">
-Featuring is not guaranteed. We’ll confirm permission, attribution
-and links before publishing any artist material.
+</div>
+</div>
+</section>
+
+
+<!-- SINGERS -->
+
+<section id="singers" class="dark">
+<div class="container">
+
+<div class="section-title">
+<div class="small-title">Christian Music</div>
+<h2>🎤 Jammu Christian Singers</h2>
+
+<p>
+Local Christian singers and musicians can submit their profile.
+Profiles appear publicly only after approval.
 </p>
+
+</div>
+
+<div class="two">
+
+<div class="panel">
+
+<h3>Submit Your Profile</h3>
+
+<form id="artistForm">
+
+<input
+id="artistName"
+type="text"
+placeholder="Singer / Artist name"
+required
+>
+
+<input
+id="artistEmail"
+type="email"
+placeholder="Email"
+required
+>
+
+<textarea
+id="artistMessage"
+placeholder="Tell us about yourself..."
+required
+></textarea>
+
+<input
+id="artistVideo"
+type="url"
+placeholder="YouTube / Video URL (optional)"
+>
+
+<input
+id="artistPhoto"
+type="url"
+placeholder="Photo URL (optional)"
+>
+
+<button class="btn gold" type="submit">
+Submit For Review
+</button>
+
+<p id="artistStatus" class="status"></p>
+
+</form>
+
+</div>
+
+
+<div class="panel">
+
+<h3>Featured Singers</h3>
+
+<div id="publicSingers">
+<p class="status">
+Loading approved singers...
+</p>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="connect">
+<div class="container">
+
+<div class="section-title">
+<div class="small-title">Stay connected</div>
+<h2>Connect With Us</h2>
+<p>Send a message to Yesu Ki Awaaz.</p>
+</div>
+
+<form id="contactForm" class="panel">
+
+<input
+id="contactName"
+type="text"
+placeholder="Your name"
+required
+>
+
+<input
+id="contactEmail"
+type="email"
+placeholder="Your email"
+required
+>
+
+<textarea
+id="contactMessage"
+placeholder="Your message"
+required
+></textarea>
+
+<button class="btn gold" type="submit">
+Send Message
+</button>
+
+<p id="contactStatus" class="status"></p>
+
+</form>
 
 </div>
 </section>
 
 
-<section id="ministry">
+<!-- ADMIN -->
 
-<div class="wrap">
+<section id="admin" class="dark">
 
-<div class="section-head">
+<div class="container">
 
-<div class="eyebrow">Serve through music</div>
+<div class="section-title">
 
-<h2>Let’s worship together</h2>
+<div class="small-title">
+Private Area
+</div>
+
+<h2>🔐 Admin Panel</h2>
 
 <p>
-Invite a singer or worship team for a church service,
-prayer meeting, Christian gathering or online collaboration.
+Authorized Firebase account se login karein.
 </p>
 
 </div>
 
-<div class="grid">
 
-<article class="card">
-<div class="symbol">⛪</div>
-<h3>Worship Invitations</h3>
-<p>Church services, fellowship meetings and Christian events.</p>
-<a class="text-link"
-href="mailto:ashishbhatti2190@gmail.com?subject=Worship%20Invitation">
-Enquire by email →
-</a>
-</article>
+<!-- LOGIN -->
 
-<article class="card">
-<div class="symbol">📣</div>
-<h3>Artist Collaboration</h3>
-<p>
-Connect for original songs, worship videos,
-interviews and ministry projects.
-</p>
-<a class="text-link"
-href="mailto:ashishbhatti2190@gmail.com?subject=Christian%20Music%20Collaboration">
-Collaborate →
-</a>
-</article>
+<div id="loginBox" class="panel">
 
-<article class="card">
-<div class="symbol">🙏</div>
-<h3>Support the Ministry</h3>
-<p>
-Pray for this work, share the website and help others discover Jesus-centred worship.
-</p>
-<a class="text-link" href="#connect">
-Share this mission →
-</a>
-</article>
+<h3>Admin Login</h3>
+
+<form id="loginForm">
+
+<input
+id="adminEmail"
+type="email"
+placeholder="Admin email"
+required
+>
+
+<input
+id="adminPassword"
+type="password"
+placeholder="Password"
+required
+>
+
+<button class="btn gold" type="submit">
+Login
+</button>
+
+<p id="loginStatus" class="status"></p>
+
+</form>
 
 </div>
 
-<p class="notice">
-No donations are collected on this starter site.
-If a support option is added later, it should be transparent and lawful.
-</p>
 
-</div>
-</section>
+<!-- DASHBOARD -->
 
+<div id="dashboard" style="display:none">
 
-<section class="soft" id="connect">
+<div class="panel">
 
-<div class="wrap">
-
-<div class="cta">
+<div class="two">
 
 <div>
 
-<div class="eyebrow">Stay connected</div>
+<label>
+Select Section
+</label>
 
-<h2>Let every voice praise Jesus.</h2>
+<select id="adminCollection">
 
-<p>
-Share a worship song, recommend a Jammu Christian singer,
-or get in touch about prayer and collaboration.
-</p>
+<option value="prayer_requests">
+🙏 Prayer Requests
+</option>
+
+<option value="artists">
+🎤 Artists
+</option>
+
+<option value="worship">
+🎵 Worship
+</option>
+
+<option value="bible_verses">
+📖 Bible
+</option>
+
+<option value="testimonies">
+📝 Testimonies
+</option>
+
+<option value="announcements">
+📢 Announcements
+</option>
+
+<option value="contact_messages">
+📬 Contact Messages
+</option>
+
+<option value="singers">
+🎶 Singers
+</option>
+
+</select>
 
 </div>
 
-<div class="actions">
+<div class="buttons">
 
-<a
-class="btn primary"
-href="mailto:ashishbhatti2190@gmail.com"
+<button
+type="button"
+class="btn"
+id="refreshAdmin"
 >
-Email Us
-</a>
+Refresh
+</button>
 
-<a
-class="btn secondary"
-href="https://wa.me/919797320099?text=Hello%20Yesu%20Ki%20Awaaz"
-target="_blank"
-rel="noopener"
+<button
+type="button"
+class="btn danger"
+id="logoutAdmin"
 >
-WhatsApp
-</a>
+Logout
+</button>
 
 </div>
 
 </div>
 
-<p class="notice">
-You can add official YouTube, Facebook and Instagram links here
-once you choose the pages/channels to feature.
-</p>
+<p id="adminStatus" class="status"></p>
+
+<div id="adminList"></div>
 
 </div>
+
+</div>
+
+</div>
+
 </section>
-
-</main>
 
 
 <footer>
+<div class="container">
 
-<div class="wrap footer-row">
+✝ <strong>YESU KI AWAAZ</strong>
 
-<div>
-<div class="footer-brand">
-✝ <span>YESU KI AWAAZ</span>
-</div>
+<br>
 
-<div class="tiny">
 “Jiske kaan ho, vo sun le.”
-</div>
-</div>
 
-<div class="tiny">
-Jesus Christ is Lord · Built to share worship, hope and community
-</div>
+<br><br>
 
-<div class="tiny">
 © 2026 Yesu Ki Awaaz
-</div>
 
 </div>
-
 </footer>
 
 
@@ -833,27 +798,59 @@ Jesus Christ is Lord · Built to share worship, hope and community
 
 <script type="module">
 
-import { initializeApp }
+import {
+initializeApp
+}
 from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+
 
 import {
 getFirestore,
 collection,
 addDoc,
-serverTimestamp
+getDocs,
+deleteDoc,
+doc,
+serverTimestamp,
+query,
+where
 }
 from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
 
 
+import {
+getAuth,
+signInWithEmailAndPassword,
+signOut,
+onAuthStateChanged
+}
+from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
+
+
+/* FIREBASE CONFIG */
+
 const firebaseConfig = {
 
-apiKey: "AIzaSyBetlFPwg-xtsVSz1mjXoNiG_dyHdpbdAk",
-authDomain: "yesu-ki-awaaz.firebaseapp.com",
-projectId: "yesu-ki-awaaz",
-storageBucket: "yesu-ki-awaaz.firebasestorage.app",
-messagingSenderId: "122463743602",
-appId: "1:122463743602:web:7f379beb1c927360ab5ceb",
-measurementId: "G-SDHQ2FXSNY"
+apiKey:
+"AIzaSyBetlFPwg-xtsVSz1mjXoNiG_dyHdpbdAk",
+
+authDomain:
+"yesu-ki-awaaz.firebaseapp.com",
+
+projectId:
+"yesu-ki-awaaz",
+
+storageBucket:
+"yesu-ki-awaaz.firebasestorage.app",
+
+messagingSenderId:
+"122463743602",
+
+appId:
+"1:122463743602:web:7f379beb1c927360ab5ceb",
+
+measurementId:
+"G-SDHQ2FXSNY"
 
 };
 
@@ -862,86 +859,640 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
-
-const prayerForm = document.getElementById("prayerForm");
-
-const prayerStatus = document.getElementById("prayerStatus");
-
-const prayerSubmit = document.getElementById("prayerSubmit");
+const auth = getAuth(app);
 
 
-prayerForm.addEventListener("submit", async function(event){
+/* COMMON ADD FUNCTION */
 
-event.preventDefault();
+async function addRecord(collectionName,data){
 
-const name =
-document.getElementById("prayerName").value.trim();
+await addDoc(
+collection(db,collectionName),
+{
+...data,
+createdAt:serverTimestamp()
+}
+);
 
-const email =
-document.getElementById("prayerEmail").value.trim();
-
-const message =
-document.getElementById("prayerMessage").value.trim();
+}
 
 
-if(!name || !message){
+/* PRAYER */
 
-prayerStatus.textContent =
-"Please enter your name and prayer request.";
+document
+.getElementById("prayerForm")
+.addEventListener("submit",async function(e){
+
+e.preventDefault();
+
+const status =
+document.getElementById("prayerStatus");
+
+status.textContent="Sending...";
+
+try{
+
+await addRecord(
+"prayer_requests",
+{
+name:
+document.getElementById("prayerName").value.trim(),
+
+email:
+document.getElementById("prayerEmail").value.trim(),
+
+message:
+document.getElementById("prayerMessage").value.trim(),
+
+status:"new"
+}
+);
+
+this.reset();
+
+status.textContent=
+"🙏 Prayer request received. God bless you.";
+
+}
+
+catch(error){
+
+console.error(error);
+
+status.textContent=
+"Something went wrong. Please try again.";
+
+}
+
+});
+
+
+/* TESTIMONY */
+
+document
+.getElementById("testimonyForm")
+.addEventListener("submit",async function(e){
+
+e.preventDefault();
+
+const status=
+document.getElementById("testimonyStatus");
+
+status.textContent="Sending...";
+
+try{
+
+await addRecord(
+"testimonies",
+{
+name:
+document.getElementById("testimonyName").value.trim(),
+
+email:
+document.getElementById("testimonyEmail").value.trim(),
+
+title:
+document.getElementById("testimonyTitle").value.trim(),
+
+message:
+document.getElementById("testimonyMessage").value.trim(),
+
+status:"pending"
+}
+);
+
+this.reset();
+
+status.textContent=
+"✅ Testimony submitted for review.";
+
+}
+
+catch(error){
+
+console.error(error);
+
+status.textContent=
+"Could not submit testimony.";
+
+}
+
+});
+
+
+/* ARTIST */
+
+document
+.getElementById("artistForm")
+.addEventListener("submit",async function(e){
+
+e.preventDefault();
+
+const status=
+document.getElementById("artistStatus");
+
+status.textContent="Sending...";
+
+try{
+
+await addRecord(
+"artists",
+{
+name:
+document.getElementById("artistName").value.trim(),
+
+email:
+document.getElementById("artistEmail").value.trim(),
+
+message:
+document.getElementById("artistMessage").value.trim(),
+
+videoUrl:
+document.getElementById("artistVideo").value.trim(),
+
+photoUrl:
+document.getElementById("artistPhoto").value.trim(),
+
+status:"pending"
+}
+);
+
+this.reset();
+
+status.textContent=
+"✅ Artist submission received for review.";
+
+}
+
+catch(error){
+
+console.error(error);
+
+status.textContent=
+"Could not submit artist profile.";
+
+}
+
+});
+
+
+/* CONTACT */
+
+document
+.getElementById("contactForm")
+.addEventListener("submit",async function(e){
+
+e.preventDefault();
+
+const status=
+document.getElementById("contactStatus");
+
+status.textContent="Sending...";
+
+try{
+
+await addRecord(
+"contact_messages",
+{
+name:
+document.getElementById("contactName").value.trim(),
+
+email:
+document.getElementById("contactEmail").value.trim(),
+
+message:
+document.getElementById("contactMessage").value.trim(),
+
+status:"new"
+}
+);
+
+this.reset();
+
+status.textContent=
+"✅ Message received.";
+
+}
+
+catch(error){
+
+console.error(error);
+
+status.textContent=
+"Could not send message.";
+
+}
+
+});
+
+
+/* ADMIN ELEMENTS */
+
+const loginBox=
+document.getElementById("loginBox");
+
+const dashboard=
+document.getElementById("dashboard");
+
+const adminList=
+document.getElementById("adminList");
+
+const adminCollection=
+document.getElementById("adminCollection");
+
+const adminStatus=
+document.getElementById("adminStatus");
+
+
+/* LOGIN */
+
+document
+.getElementById("loginForm")
+.addEventListener("submit",async function(e){
+
+e.preventDefault();
+
+const status=
+document.getElementById("loginStatus");
+
+status.textContent="Logging in...";
+
+try{
+
+await signInWithEmailAndPassword(
+
+auth,
+
+document
+.getElementById("adminEmail")
+.value
+.trim(),
+
+document
+.getElementById("adminPassword")
+.value
+
+);
+
+this.reset();
+
+status.textContent="";
+
+}
+
+catch(error){
+
+console.error(error);
+
+status.textContent=
+"Login failed. Check email and password.";
+
+}
+
+});
+
+
+/* LOGOUT */
+
+document
+.getElementById("logoutAdmin")
+.addEventListener("click",function(){
+
+signOut(auth);
+
+});
+
+
+/* REFRESH */
+
+document
+.getElementById("refreshAdmin")
+.addEventListener("click",loadAdminRecords);
+
+
+/* COLLECTION CHANGE */
+
+adminCollection
+.addEventListener("change",loadAdminRecords);
+
+
+/* FORMAT FIREBASE DATA */
+
+function formatValue(value){
+
+if(
+value &&
+typeof value.toDate==="function"
+){
+
+return value.toDate().toLocaleString();
+
+}
+
+if(
+typeof value==="object" &&
+value!==null
+){
+
+return JSON.stringify(value);
+
+}
+
+return String(value ?? "");
+
+}
+
+
+/* LOAD ADMIN RECORDS */
+
+async function loadAdminRecords(){
+
+if(!auth.currentUser)return;
+
+adminStatus.textContent="Loading...";
+
+adminList.innerHTML="";
+
+try{
+
+const snapshot=
+await getDocs(
+collection(
+db,
+adminCollection.value
+)
+);
+
+adminStatus.textContent="";
+
+if(snapshot.empty){
+
+adminList.innerHTML=
+"<p class='status'>No records found.</p>";
 
 return;
 
 }
 
 
-prayerSubmit.disabled = true;
+snapshot.forEach(function(record){
 
-prayerSubmit.textContent = "Sending...";
+const data=record.data();
 
-prayerStatus.textContent = "";
+const box=
+document.createElement("div");
+
+box.className="admin-record";
 
 
-try{
+const title=
+data.title ||
+data.name ||
+data.reference ||
+record.id;
 
-await addDoc(
-collection(db,"prayer_requests"),
-{
 
-name: name,
+const heading=
+document.createElement("h4");
 
-email: email,
+heading.textContent=title;
 
-message: message,
 
-createdAt: serverTimestamp(),
+const details=
+document.createElement("div");
 
-status: "new"
+details.className="record-data";
+
+
+details.textContent=
+Object
+.entries(data)
+.map(
+([key,value])=>
+key+": "+formatValue(value)
+)
+.join("\n");
+
+
+const actions=
+document.createElement("div");
+
+actions.className="record-actions";
+
+
+/* EMAIL REPLY */
+
+if(data.email){
+
+const emailButton=
+document.createElement("a");
+
+emailButton.className="btn";
+
+emailButton.textContent=
+"📧 Reply by Email";
+
+emailButton.href=
+"mailto:"+
+data.email+
+"?subject="+
+encodeURIComponent(
+"Yesu Ki Awaaz"
+);
+
+actions.appendChild(emailButton);
+
+}
+
+
+/* DELETE */
+
+const deleteButton=
+document.createElement("button");
+
+deleteButton.className=
+"btn danger";
+
+deleteButton.textContent=
+"🗑️ Delete";
+
+deleteButton.addEventListener(
+"click",
+async function(){
+
+if(
+confirm(
+"Are you sure you want to delete this record?"
+)
+){
+
+await deleteDoc(
+doc(
+db,
+adminCollection.value,
+record.id
+)
+);
+
+loadAdminRecords();
+
+}
 
 }
 );
 
-
-prayerStatus.textContent =
-"🙏 Your prayer request has been received. God bless you.";
-
-prayerForm.reset();
+actions.appendChild(deleteButton);
 
 
-}catch(error){
+box.appendChild(heading);
+
+box.appendChild(details);
+
+box.appendChild(actions);
+
+adminList.appendChild(box);
+
+});
+
+}
+
+catch(error){
 
 console.error(error);
 
-prayerStatus.textContent =
-"Something went wrong. Please try again.";
+adminStatus.textContent=
+"Could not load records. Please check Firestore rules.";
+
+}
 
 }
 
 
-prayerSubmit.disabled = false;
+/* AUTH STATE */
 
-prayerSubmit.textContent = "Send Prayer Request";
+onAuthStateChanged(
+auth,
+function(user){
+
+if(user){
+
+loginBox.style.display="none";
+
+dashboard.style.display="block";
+
+loadAdminRecords();
+
+}
+else{
+
+loginBox.style.display="block";
+
+dashboard.style.display="none";
+
+adminList.innerHTML="";
+
+}
 
 });
+
+
+/* PUBLIC APPROVED SINGERS */
+
+async function loadPublicSingers(){
+
+const box=
+document.getElementById("publicSingers");
+
+try{
+
+const singerQuery=
+query(
+collection(db,"singers"),
+where("status","==","approved")
+);
+
+const snapshot=
+await getDocs(singerQuery);
+
+box.innerHTML="";
+
+if(snapshot.empty){
+
+box.innerHTML=
+"<p class='status'>No approved singers yet.</p>";
+
+return;
+
+}
+
+
+snapshot.forEach(function(record){
+
+const data=record.data();
+
+const singer=
+document.createElement("div");
+
+singer.className="admin-record";
+
+const title=
+document.createElement("h4");
+
+title.textContent=
+data.name || "Christian Singer";
+
+const info=
+document.createElement("div");
+
+info.className="record-data";
+
+info.textContent=
+data.message || "";
+
+singer.appendChild(title);
+
+singer.appendChild(info);
+
+if(data.videoUrl){
+
+const video=
+document.createElement("a");
+
+video.className="btn";
+
+video.target="_blank";
+
+video.rel="noopener";
+
+video.href=data.videoUrl;
+
+video.textContent="▶️ Watch Video";
+
+singer.appendChild(video);
+
+}
+
+box.appendChild(singer);
+
+});
+
+}
+
+catch(error){
+
+console.error(error);
+
+box.innerHTML=
+"<p class='status'>Featured singers will appear here.</p>";
+
+}
+
+}
+
+
+/* START */
+
+loadPublicSingers();
 
 </script>
 
