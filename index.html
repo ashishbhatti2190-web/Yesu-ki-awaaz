@@ -1141,11 +1141,7 @@ status.textContent="";
 }
 
 catch(error){
-
-console.error(error);
-
-status.textContent=
-"Login failed. Check email and password.";
+status.textContent = "ERROR: " + error.code;
 
 }
 
